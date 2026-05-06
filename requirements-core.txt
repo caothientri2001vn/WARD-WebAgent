@@ -1,0 +1,17 @@
+accelerate>=1.6
+beautifulsoup4>=4.12
+datasets>=3.0
+huggingface_hub>=0.31
+httpx>=0.28
+matplotlib
+numpy<2
+pandas
+peft
+Pillow>=10.0
+playwright
+pyarrow>=20.0.0
+pyyaml
+requests
+safetensors
+tqdm>=4.66
+transformers>=4.51

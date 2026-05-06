@@ -1,0 +1,56 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.python-version
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Secrets
+.env
+.env.*
+*.key
+*key*.txt
+openrouter_key.txt
+openrounter_key.txt
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+
+# Generated outputs and local data
+outputs/
+output/
+results/
+runs/
+artifacts/
+manifests/
+screenshots/
+html/
+images/
+datasets/
+data/
+data_new/
+data_new2/
+data_new3/
+data_final*/
+train_logs/
+checkpoints/
+output_models/
+original_model/
+
+# Jupyter
+.ipynb_checkpoints/
