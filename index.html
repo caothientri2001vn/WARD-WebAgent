@@ -51,8 +51,17 @@
           limited generalization to unseen domains and attack patterns, high false positive rates
           on benign content, reduced deployment efficiency due to added latency at each step, and
           vulnerability to adversarial attacks that evolve over time or directly target the guard
-          itself. WARD addresses these limitations with a practical multimodal guard framework for
-          secure and efficient web agents.
+          itself. To address these limitations, we propose WARD (Web Agent Robust Defense against
+          Prompt Injection), a practical guard model for secure and efficient web agents. WARD is
+          built on WARD-Base, a large-scale dataset with around 177K samples collected from 719
+          high-traffic URLs and platforms, and WARD-PIG, a dedicated dataset designed for prompt
+          injection attacks targeting the guard model. We further introduce A3T, an adaptive
+          adversarial attack training framework that iteratively strengthens WARD through a
+          memory-based attacker and guard co-evolution process. Extensive experiments show that
+          WARD achieves nearly perfect recall on out-of-distribution benchmarks, maintains low
+          false positive rates to preserve agent utility, remains robust against guard-targeted and
+          adaptive attacks under substantial distribution shifts, and runs efficiently in parallel
+          with the agent without introducing additional latency.
         </p>
       </section>
 
