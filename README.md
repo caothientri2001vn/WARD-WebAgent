@@ -20,6 +20,10 @@ Release highlights:
 - Hugging Face repos: `tricao1105/WARD-0.8b` and `tricao1105/WARD-2b`
 - ready-to-use inference prompt and `transformers` example
 
+## Data
+
+Data for evaluation and training will be pulished soon.
+
 ## Quick Start
 
 Install dependencies:
