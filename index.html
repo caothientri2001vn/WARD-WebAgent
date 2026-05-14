@@ -175,6 +175,62 @@ model = AutoModelForImageTextToText.from_pretrained(
     trust_remote_code=True,
 )</code></pre>
       </section>
+
+      <section class="section">
+        <h2>How to Use the Model</h2>
+        <p>
+          After loading the model, pass the exact system prompt and user message structure below.
+        </p>
+        <div class="grid usage">
+          <div class="code-block">
+            <h3>Build Messages</h3>
+            <pre><code>system_prompt = """...use the full system prompt above exactly..."""
+user_task = "Compare the MacBook Air and the ASUS ZenBook."
+processed_html = "Product page text goes here."
+
+messages = [
+    {"role": "system", "content": system_prompt},
+    {
+        "role": "user",
+        "content": [
+            {
+                "type": "text",
+                "text": (
+                    "Below is the available evidence.\n\n"
+                    "[USER INTENDED TASK]\n"
+                    f"{user_task}\n\n"
+                    "[SCREENSHOT]\n"
+                    "&lt;|vision_start|&gt;&lt;|image_pad|&gt;&lt;|vision_end|&gt;\n\n"
+                    "[HTML TEXT]\n"
+                    f"{processed_html}\n\n"
+                    "Return JSON only."
+                ),
+            },
+            {"type": "image", "image": Image.open("screenshot.png").convert("RGB")},
+        ],
+    },
+]</code></pre>
+          </div>
+
+          <div class="code-block">
+            <h3>Run Inference</h3>
+            <pre><code>inputs = processor.apply_chat_template(
+    messages,
+    add_generation_prompt=True,
+    tokenize=True,
+    return_dict=True,
+    return_tensors="pt",
+).to(model.device)
+
+with torch.inference_mode():
+    output = model.generate(**inputs, max_new_tokens=512)
+
+trimmed = output[:, inputs["input_ids"].shape[1]:]
+text = processor.batch_decode(trimmed, skip_special_tokens=True)[0]
+print(text)</code></pre>
+          </div>
+        </div>
+      </section>
     </main>
   </body>
 </html>
