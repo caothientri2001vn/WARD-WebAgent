@@ -85,7 +85,7 @@ messages = [
                     "[USER INTENDED TASK]\n"
                     f"{user_task}\n\n"
                     "[SCREENSHOT]\n"
-                    "<image>\n\n"
+                    "<|vision_start|><|image_pad|><|vision_end|>\n\n"
                     "[HTML TEXT]\n"
                     f"{processed_html}\n\n"
                     "Return JSON only."
