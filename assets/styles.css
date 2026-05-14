@@ -50,6 +50,26 @@ h1 {
   line-height: 1.7;
 }
 
+.authors {
+  width: min(980px, 100%);
+  margin: 18px auto 0 !important;
+  color: var(--text) !important;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.05rem !important;
+  line-height: 1.65 !important;
+  text-align: center;
+}
+
+.affiliations {
+  width: min(980px, 100%);
+  margin: 12px auto 0 !important;
+  color: var(--text) !important;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.98rem !important;
+  line-height: 1.6 !important;
+  text-align: center;
+}
+
 .link-row {
   display: flex;
   justify-content: center;

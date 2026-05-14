@@ -1,5 +1,7 @@
 # WARD: Web Agent Robust Defense against Prompt Injection
 
+Project page: `https://caothientri2001vn.github.io/WARD-WebAgent/`
+
 This repo is the lightweight release site for the WARD models.
 
 It only contains:
@@ -166,10 +168,3 @@ trimmed = output[:, inputs["input_ids"].shape[1]:]
 text = processor.batch_decode(trimmed, skip_special_tokens=True)[0]
 print(text)
 ```
-
-## Website
-
-The release page is hosted with GitHub Pages from this repo:
-
-- `https://github.com/caothientri2001vn/WARD-WebAgent`
-- `https://caothientri2001vn.github.io/WARD-WebAgent/`
