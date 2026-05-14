@@ -1,4 +1,4 @@
-# WARD: Web Agent Robust Defense against Prompt Injection
+# WARD: Adversarially Robust Defense of Web Agents Against Prompt Injections
 
 Project page: `https://caothientri2001vn.github.io/WARD-WebAgent/`
 
