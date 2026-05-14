@@ -7,14 +7,6 @@
   <a href="https://huggingface.co/tricao1105/WARD-2b">WARD-2b</a>
 </p>
 
-This repo is the lightweight release site for the WARD models.
-
-It only contains:
-
-- model usage instructions
-- Hugging Face model cards
-- the GitHub Pages landing page
-
 ## Models
 
 The Hugging Face repos are:
