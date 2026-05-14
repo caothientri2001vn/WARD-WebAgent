@@ -193,15 +193,14 @@ This repo already contains:
 
 - `index.html`
 - `assets/styles.css`
-- `.github/workflows/deploy-pages.yml`
 - `.nojekyll`
 
 After pushing to GitHub:
 
 1. Create the repo, for example `WARD-WebAgent`
 2. Push this directory
-3. In GitHub settings, enable Pages with `GitHub Actions` as the source
-4. The workflow deploys the static site automatically
+3. In GitHub settings, enable Pages from branch `main` and folder `/ (root)`
+4. GitHub will publish the static site directly from the branch
 
 If you prefer the CLI:
 
