@@ -198,7 +198,7 @@ This repo already contains:
 
 After pushing to GitHub:
 
-1. Create the repo, for example `WARD`
+1. Create the repo, for example `WARD-WebAgent`
 2. Push this directory
 3. In GitHub settings, enable Pages with `GitHub Actions` as the source
 4. The workflow deploys the static site automatically
@@ -210,7 +210,7 @@ git init
 git add .
 git commit -m "Initial WARD release site"
 git branch -M main
-git remote add origin git@github.com:caothientri2001vn/WARD.git
+git remote add origin git@github.com:caothientri2001vn/WARD-WebAgent.git
 git push -u origin main
 ```
 
