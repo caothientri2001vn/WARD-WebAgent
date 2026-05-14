@@ -70,6 +70,26 @@ h1 {
   text-align: center;
 }
 
+.hero-links {
+  width: min(980px, 100%);
+  margin: 14px auto 0 !important;
+  color: var(--muted) !important;
+  font-size: 1rem !important;
+  line-height: 1.7 !important;
+  text-align: center;
+}
+
+.hero-links a {
+  color: var(--link);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.hero-links span {
+  margin: 0 8px;
+  color: var(--muted);
+}
+
 .link-row {
   display: flex;
   justify-content: center;

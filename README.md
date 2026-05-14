@@ -1,6 +1,11 @@
 # WARD: Adversarially Robust Defense of Web Agents Against Prompt Injections
 
-Project page: https://caothientri2001vn.github.io/WARD-WebAgent/
+<p align="center">
+  <a href="https://caothientri2001vn.github.io/WARD-WebAgent/">Project Page</a> |
+  <a href="https://github.com/caothientri2001vn/WARD-WebAgent">GitHub</a> |
+  <a href="https://huggingface.co/tricao1105/WARD-0.8b">WARD-0.8b</a> |
+  <a href="https://huggingface.co/tricao1105/WARD-2b">WARD-2b</a>
+</p>
 
 This repo is the lightweight release site for the WARD models.
 
