@@ -32,7 +32,6 @@ openrounter_key.txt
 *.temp
 
 # Generated outputs and local data
-scripts/
 outputs/
 output/
 results/
