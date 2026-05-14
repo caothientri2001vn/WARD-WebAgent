@@ -7,7 +7,6 @@ It only contains:
 - model usage instructions
 - Hugging Face model cards
 - the GitHub Pages landing page
-- a small script to publish the checkpoints to Hugging Face
 
 ## Models
 
@@ -16,23 +15,24 @@ The Hugging Face repos are:
 - `tricao1105/WARD-0.8b`
 - `tricao1105/WARD-2b`
 
-Local source checkpoints:
-
-- `/home/tri/Guard_new/aaa_rl/exports/split3_grpo__qwen3_5_0_8b_perf__global_step_19__hf`
-- `/home/tri/Guard_new/aaa_rl/exports/split3_grpo__qwen3_5_2b_perf__global_step_19__hf`
-
-Balanced test metrics from the local local evaluation artifacts:
-
-| Model | Label Acc. | Label F1 | Location Acc. | Exact Match |
-| --- | ---: | ---: | ---: | ---: |
-| WARD-0.8b | 99.33 | 99.34 | 99.23 | 99.23 |
-| WARD-2b | 99.20 | 99.20 | 99.13 | 99.13 |
-
 Release highlights:
 
 - multimodal guard checkpoints for web-agent prompt injection defense
 - Hugging Face repos: `tricao1105/WARD-0.8b` and `tricao1105/WARD-2b`
 - ready-to-use inference prompt and `transformers` example
+
+## Quick Start
+
+Install dependencies:
+
+```bash
+pip install torch pillow transformers
+```
+
+Then load either:
+
+- `tricao1105/WARD-0.8b`
+- `tricao1105/WARD-2b`
 
 ## Inference
 
@@ -167,38 +167,9 @@ text = processor.batch_decode(trimmed, skip_special_tokens=True)[0]
 print(text)
 ```
 
-## Publish To Hugging Face
-
-1. Log in:
-
-```bash
-hf auth login
-```
-
-2. Publish both checkpoints:
-
-```bash
-python scripts/publish_hf_models.py --namespace tricao1105
-```
-
-The script creates:
-
-- `tricao1105/WARD-0.8b`
-- `tricao1105/WARD-2b`
-
-It stages the local export folders, writes model cards, then uploads the full checkpoint folders.
-
 ## Website
 
 The release page is hosted with GitHub Pages from this repo:
 
 - `https://github.com/caothientri2001vn/WARD-WebAgent`
 - `https://caothientri2001vn.github.io/WARD-WebAgent/`
-
-## Local Preview
-
-```bash
-python -m http.server 8000
-```
-
-Then open `http://localhost:8000`.
