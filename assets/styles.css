@@ -149,6 +149,7 @@ h1 {
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 16px;
+  min-width: 0;
 }
 
 .card strong {
@@ -170,6 +171,8 @@ h1 {
 
 .snippet {
   position: relative;
+  width: 100%;
+  min-width: 0;
 }
 
 .copy-button {
@@ -197,6 +200,11 @@ pre {
   color: #222;
   font-size: 0.92rem;
   line-height: 1.58;
+  width: 100%;
+  max-width: 100%;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 code {
