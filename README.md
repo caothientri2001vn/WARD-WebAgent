@@ -1,12 +1,24 @@
 # WARD: Adversarially Robust Defense of Web Agents Against Prompt Injections
 
-WARD is a multimodal guard family for defending web agents against prompt injections in HTML and screenshots.
+WARD is the project site and release repo for the paper `WARD: Web Agent Robust Defense against Prompt Injection`.
 
 This repo packages:
 
-- the project landing page for GitHub Pages
+- the paper landing page for GitHub Pages
 - usage instructions for the released Hugging Face checkpoints
 - scripts to publish the model artifacts to Hugging Face
+
+## Paper Summary
+
+From the paper abstract:
+
+Web agents are vulnerable to prompt injection attacks embedded in HTML content or visual interfaces. WARD addresses limited generalization, high false positives, deployment inefficiency, and adversarial vulnerability in prior guards. The framework combines:
+
+- `WARD-Base`: around `177K` multimodal samples from `719` high-traffic URLs and platforms
+- `WARD-PIG`: prompt injection attacks targeting the guard model itself
+- `WARD-AAA`: adaptive adversarial training with an attacker, validator, and guard co-evolution loop
+
+The paper reports nearly perfect recall on unseen domains, low false positive rates, strong robustness against guard-targeted and adaptive attacks, and efficient parallel execution with the agent.
 
 ## Models
 
@@ -20,18 +32,22 @@ Local source checkpoints:
 - `/home/tri/Guard_new/aaa_rl/exports/split3_grpo__qwen3_5_0_8b_perf__global_step_19__hf`
 - `/home/tri/Guard_new/aaa_rl/exports/split3_grpo__qwen3_5_2b_perf__global_step_19__hf`
 
-Balanced test metrics from the local evaluation artifacts:
+Balanced test metrics from the local local evaluation artifacts:
 
 | Model | Label Acc. | Label F1 | Location Acc. | Exact Match |
 | --- | ---: | ---: | ---: | ---: |
 | WARD-0.8b | 99.33 | 99.34 | 99.23 | 99.23 |
 | WARD-2b | 99.20 | 99.20 | 99.13 | 99.13 |
 
-OOD benchmark highlights used on the website:
+Paper-aligned highlights used on the website:
 
-- Recall on Popup, EIA, VPI, WASP: `100%` for both WARD-0.8b and WARD-2b
-- False alert rate on WebArena: `0.27%` for WARD-0.8b, `0.24%` for WARD-2b
-- Per-sample attack success rate at try budget 10: `5.63%` for WARD-0.8b, `3.13%` for WARD-2b
+- WARD-Base size: `177,585` samples
+- Coverage: `719` URLs and platforms
+- VPI defense ASR: `0%` across the reported protected-agent settings
+- GPT-4o false positive rate on WebArena: around `0.25%` to `0.26%`
+- PIG recall: `100%` across HTML, screenshot, and both-modality settings for WARD-0.8b and WARD-2b
+- AAA robustness at try budget `10`: `5.62` SSR for WARD-0.8b and `3.12` SSR for WARD-2b
+- Runtime: around `2.24s` to `2.45s` per step for WARD, vs `8.81s` to `10.03s` for WebAgentGuard
 
 ## Inference
 

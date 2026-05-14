@@ -234,6 +234,37 @@ main {
   gap: 22px;
 }
 
+.three-up {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.results-grid article,
+.three-up .panel {
+  min-height: 100%;
+}
+
+.results-grid h3 {
+  margin: 0 0 10px;
+  font-size: 1.15rem;
+  line-height: 1.1;
+}
+
+.results-grid p,
+.three-up p,
+.panel > p:last-child {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.72;
+}
+
 pre {
   overflow-x: auto;
   margin: 16px 0 0;
@@ -253,7 +284,9 @@ code {
 @media (max-width: 920px) {
   .hero,
   .abstract,
-  .two-up {
+  .two-up,
+  .three-up,
+  .results-grid {
     grid-template-columns: 1fr;
   }
 
