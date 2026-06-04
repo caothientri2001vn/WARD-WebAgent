@@ -164,7 +164,7 @@ inputs = processor.apply_chat_template(
 ).to(model.device)
 
 with torch.inference_mode():
-    output = model.generate(**inputs, max_new_tokens=512)
+    output = model.generate(**inputs, max_new_tokens=1024)
 
 trimmed = output[:, inputs["input_ids"].shape[1]:]
 text = processor.batch_decode(trimmed, skip_special_tokens=True)[0]
